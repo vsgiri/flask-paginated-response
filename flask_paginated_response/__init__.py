@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from urllib import urlencode
+try:
+    from urllib import urlencode
+except ImportError:
+    from urllib.parse import urlencode
 from urlparse import urlparse, parse_qs, urlunparse
 
 from flask import Response, request
