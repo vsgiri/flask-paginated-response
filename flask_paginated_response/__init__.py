@@ -4,7 +4,10 @@ try:
     from urllib import urlencode
 except ImportError:
     from urllib.parse import urlencode
-from urlparse import urlparse, parse_qs, urlunparse
+try:
+    from urlparse import urlparse, parse_qs, urlunparse
+except ImportError:
+    from urllib.parse import urlparse, parse_qs, urlunparse
 
 from flask import Response, request
 
